@@ -1,38 +1,458 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import url("fonts/stylesheet.css");
+
+*,::after,::before {margin: 0; padding: 0; box-sizing: border-box; }
+
+a,ul,li,p,h1,h2,h3,h4{ list-style-type: none; outline: none;  text-decoration: none;}
+
+.App,main,title,.title-h2,.btn,
+article,img,footer,button,
+.single-tour,.tour-location,.tour-info,.tour-price,.delete-btn,.loading,.App-title,
+.title,.underline,.container-title,.container-tours,.p-tour,.content-section,.button-tour,
+a,ul,li,p,h1,h2,h3,h4{
+    display: grid;
+    position: relative;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App,main{  width: 100vw;  height: 100vh; }
+
+h1,h2,h3,h4 {
+    letter-spacing: 0.1vw;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75vh;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color:  hsl(205, 78%, 60%);
+}
+h1 {  font-size: 3vh; }
+h2 {  font-size: 2vh; }
+h3 {  font-size: 3vh; }
+h4 {  font-size: 2vh; }
+p {
+    font-size: 2vh;
+    margin-bottom: 1.25vh;
+    color: hsl(210, 22%, 49%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+:root {
+    /* dark shades of primary color*/
+    --clr-primary-1: hsl(205, 54%, 79%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    /* primary/main color */
+    --clr-primary-5: hsl(205, 78%, 60%);
+    /* lighter shades of primary color */
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(210, 40%, 4%);
+    /* darkest grey - used for headings */
+    --clr-grey-1: hsl(209, 50%, 77%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    /* grey used for paragraphs */
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: rgba(10, 10, 15, 0.431);
+    --clr-red-dark: rgb(202, 216, 238);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.section {
+    width: 100vw;
+    height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.container-title{
+    width: 100vw;
+    height: 100vh;
+
+
+}
+.container-tours{
+    width: 100vw;
+    height: 100vh;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title{
+    grid-template-columns: repeat(2,1fr);
+    width: 50vw;
+    height: 10vh;
+
+
+}
+.app-title-h2{
+    width: 30vw;
+    height: 10vh;
+    left: 10vw;
+    bottom: 5vh;
+    font-size: 5vh;
+}
+
+.app-btn{
+    left: 15vw;
+    width: 20vw;
+    height: 5vh;
+    font-size: 2vh;
+    border-radius:2vh;
+
+}
+
+.container-tours{
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.btn {
+    padding: 0.25rem 0.5rem;
+    border-radius: 2vh;
+    text-transform: capitalize;
+    color: rgba(255,255,255,0.8);
+    letter-spacing:0.2vw;
+    border-color: transparent;
+    cursor: pointer;
+
+    font-size: 1.2vh;
+}
+
+.loading {
+    width: 20vw;
+    height: 10vh;
+
+
+}
+
+.title {
+    width: 20vw;
+    height: 10vh;
+}
+
+
+
+.underline {
+    width: 10vw;
+    height: 5vh;
+    border:  0.1vh solid  hsl(205, 78%, 60%);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vh;
+
+}
+
+.section-tours{
+    grid-template-columns: repeat(2,1fr);
+    width: 80vw;
+    height: 80vh;
+}
+
+.single-tour {
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 1vw;
+    width: 80vw;
+    height: 60vh;
+    border-radius: 2vh;
+    margin: 2rem 0;
+    box-shadow: 0 2vh 2vw rgba(0, 0, 0, 0.8);;
+    transition: all 0.3s linear;
+}
+.single-tour:hover {
+    box-shadow: 0 2vh 2vw rgba(0, 0, 0, 0.2);
+}
+.pic-tour {
+
+    width: 35vw;
+    height: 50vh;
+    object-fit: cover;
+   border-radius: 2vh;
+}
+.tour-info {
+  grid-template-columns: repeat(2,1fr);
+    width: 35vw;
+    height: 6vh;
+}
+
+.h4-tour{
+    width: 25vw;
+    height: 5vh;
+    font-size: 2vh;
+    color: #222;
+}
+.p-tour{
+    width: 35vw;
+    height: 30vh;
+    font-size: 2vh;
+    color: #222;
+}
+.single-tour button {
+    width: 8vw;
+    height: 4vh;
+    border-radius: 2vh;
+
+    border-color: transparent;
+    text-transform: capitalize;
+    color:  hsl(205, 78%, 60%);
+    font-size: 1rem;
+    cursor: pointer;
+    padding-left: 0.25rem;
+}
+.tour-price {
+    color:  hsl(205, 78%, 60%);
+    padding: 1vh 1vw;
+    border-radius: 2vh;
+    border: 0.1vh solid  hsl(205, 78%, 60%);
+}
+
+.button-tour{
+    grid-template-columns: repeat(2,1fr);
+    width: 30vw;
+}
+
+footer {
+    grid-template-rows: repeat(4,1fr);
+    width: 35vw;
+    height: 50vh;
+}
+.single-tour .delete-btn {
+
+    width: 10vw;
+    height: 5vh;
+    color:  hsl(205, 78%, 60%);
+    letter-spacing: 0.2vw;
+    border: 0.1vh solid   hsl(205, 78%, 60%);
+    border-radius: 2vh;
+}
+
+
+@media screen and (max-width: 1025px) {
+
+    .content-section{
+        grid-template-rows: repeat(5,1fr);
+        grid-row-gap: 3vh;
+        width: 80vw;
+        height: 100vh;
+    }
+
+    .section {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container-title{
+        width: 100vw;
+        height: 100vh;
+
+        grid-row-gap: 10vh;
+    }
+
+
+    .content-section{
+        width: 80vw;
+        height: 100vh;
+        grid-row-gap: 10vh;
+    }
+
+    .container-tours{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .app-title{
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+        width: 50vw;
+        height: 20vh;
+    }
+
+    .app-title-h2{
+        width: 30vw;
+        height: 10vh;
+        left: 10vw;
+        bottom: 5vh;
+        font-size: 5vh;
+    }
+
+    .app-btn{
+        left: 15vw;
+        width: 20vw;
+        height: 5vh;
+        font-size: 2vh;
+        border-radius:2vh;
+    }
+
+    .btn {
+        padding: 1vh 1vw;
+        border-radius: 2vh;
+        text-transform: capitalize;
+        color: rgba(255,255,255,0.8);
+        letter-spacing:0.2vw;
+        border-color: transparent;
+        cursor: pointer;
+        font-size: 1.2vh;
+    }
+
+    .loading {
+        width: 20vw;
+        height: 10vh;
+    }
+
+    .title {
+        width: 20vw;
+        height: 10vh;
+    }
+
+
+
+    .underline {
+        width: 20vw;
+        height: 5vh;
+        border:  0.1vh solid  hsl(205, 78%, 60%);
+        border-radius: 2vh;
+    }
+
+    .section-tours{
+        width: 80vw;
+        height: 100vh;
+    }
+
+    .single-tour {
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(1,1fr);
+        width: 80vw;
+        height: 100vh;
+        border-radius: 2vh;
+        box-shadow: 0 2vh 2vw rgba(0, 0, 0, 0.8);;
+        transition: all 0.3s linear;
+    }
+    .single-tour:hover {
+        box-shadow: 0 2vh 2vw rgba(0, 0, 0, 0.2);
+    }
+    .pic-tour {
+        width: 70vw;
+        height: 50vh;
+        object-fit: cover;
+        border-radius: 2vh;
+    }
+    .tour-info {
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(2,1fr);
+        width: 50vw;
+        height: 10vh;
+    }
+
+    .h4-tour{
+        width: 40vw;
+        height: 5vh;
+        font-size: 2vh;
+        color: #222;
+    }
+
+    .p-tour{
+        width: 50vw;
+        height: 20vh;
+        font-size: 2vh;
+        color: #222;
+        line-height: 3.5vh;
+    }
+
+    .single-tour button {
+        width: 22vw;
+        height: 5vh;
+        border-radius: 2vh;
+        border-color: transparent;
+        text-transform: capitalize;
+        background-color: rgba(255,255,255,0);
+        color:  hsl(205, 78%, 60%);
+        font-size: 2vh;
+        cursor: pointer;
+    }
+
+    .tour-price {
+        color:  hsl(205, 78%, 60%);
+        padding: 1vh 1vw;
+        border-radius: 2vh;
+        border: 0.1vh solid  hsl(205, 78%, 60%);
+    }
+
+    .button-tour{
+        grid-template-columns: repeat(2,1fr);
+        width: 50vw;
+        height: 10vh;
+        bottom: 2vh;
+    }
+
+    footer {
+        grid-template-rows: repeat(4,1fr);
+        width: 80vw;
+        height: 40vh;
+    }
+
+    .single-tour .delete-btn {
+
+        width: 20vw;
+        height: 5vh;
+        color:  hsl(205, 78%, 60%);
+        letter-spacing: 0.2vw;
+        border: 0.1vh solid   hsl(205, 78%, 60%);
+        border-radius: 2vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .container-title{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .single-tour{
+        width: 80vw;
+        height: 120vh;
+    }
+
+    footer{
+        width: 80vw;
+        height: 55vh;
+    }
+
+    .tour-info{
+        height: 15vh;
+    }
+
+    .p-tour{
+        top: 5vh;
+        width: 60vw;
+    }
+
+    .button-tour{
+        top: 5vh;
+        width: 60vw;
+    }
 }
